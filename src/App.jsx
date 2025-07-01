@@ -74,9 +74,7 @@ function App() {
 
       {/* Main Content */}
       <main
-        className={`flex-1 flex flex-col items-center justify-center p-4 md:p-12 overflow-auto w-full transition-all duration-300 ${
-          showLibrary ? "md:ml-[16vw]" : ""
-        }`}
+        className="flex-1 flex flex-col items-center justify-center p-4 md:p-12 overflow-auto w-full transition-all duration-300"
       >
         <div className="w-full flex flex-col items-center">
           <PDFReader onLoadText={setBook} />
@@ -96,7 +94,7 @@ function App() {
               </div>
             </>
           )}
-          {!book && !showLibrary && (
+          {!book && (
             <p className="text-lg mt-8 text-center">Upload or select a book to get started!</p>
           )}
         </div>
