@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PDFReader from "./components/PDFReader";
 import WordFlasher from "./components/WordFlasher";
 import Library from "./components/Library";
+import logo from "./assets/logo.png"; // adjust the path as needed
 
 function App() {
   const [book, setBook] = useState(null);
   const [wpm, setWpm] = useState(300);
-  const [showLibrary, setShowLibrary] = useState(false);
+  const [showLibrary, setShowLibrary] = useState(window.innerWidth >= 768); // open on desktop, closed on mobile
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setShowLibrary(false);
+      } else {
+        setShowLibrary(true);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    // Set initial state on mount
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleSelectBook = (bookData) => {
     const progress = parseInt(localStorage.getItem(`progress-${bookData.name}`)) || 0;
@@ -27,7 +42,7 @@ function App() {
         >
           <div className="flex items-center gap-2 mb-4 w-full">
             <img
-              src="public/Screenshot 2025-06-19 165507.png"
+              src={logo}
               alt="PulseRead Logo"
               className="h-10 w-10 md:h-15 md:w-15 object-contain"
             />
@@ -64,7 +79,7 @@ function App() {
         {!showLibrary && (
           <div className="absolute top-4 left-4 flex items-center gap-2 z-50">
             <img
-              src="public/Screenshot 2025-06-19 165507.png"
+              src={logo}
               alt="PulseRead Logo"
               className="h-10 w-10 md:h-15 md:w-15 object-contain"
             />
