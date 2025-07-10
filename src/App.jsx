@@ -28,12 +28,19 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-[#272121] text-[#FFFDFD] overflow-x-hidden">
+    <div className="flex flex-col min-h-screen max-h-screen font-sans bg-[#272121] text-[#FFFDFD] overflow-x-hidden overflow-y-hidden">
       {/* Header */}
-      <header className="w-full flex items-center gap-2 px-4 py-3 bg-[#181C1F] border-b border-[#3a332f] z-50">
+      <header
+        className="w-full flex items-center gap-2 px-4 py-3 z-50"
+        style={{
+          background: "rgba(15, 15, 35, 0.8)",
+          backdropFilter: "blur(20px)",
+          borderBottom: "1px solid rgba(120, 255, 120, 0.1)"
+        }}
+      >
         <button
           onClick={() => setShowLibrary((prev) => !prev)}
-          className="bg-[#BEFC6D] text-[#272121] font-semibold rounded-lg p-2 shadow-md hover:bg-[#d9ff96] transition-all flex items-center justify-center"
+          className="bg-[#53E47F] text-[#272121] font-semibold rounded-lg p-2 shadow-md hover:bg-[#53e47e54] transition-all flex items-center justify-center"
           style={{ minWidth: "40px", minHeight: "40px" }}
           aria-label={showLibrary ? "Close sidebar" : "Open sidebar"}
         >
@@ -61,12 +68,21 @@ function App() {
 
       {/* Sidebar */}
       <aside
-        className="fixed top-[64px] left-0 z-40 w-2/3 md:w-[16vw] h-[calc(100%-64px)] bg-[#181C1F] p-4 md:p-6 border-b md:border-b-0 md:border-r border-[#3a332f] flex flex-col gap-4 md:gap-8 shadow-lg transition-transform duration-300 ease-in-out"
+        className="fixed top-[64px] left-0 z-40 flex flex-col gap-4 md:gap-8 transition-transform duration-300 ease-in-out"
         style={{
-          transform: showLibrary
-            ? "translateX(0)"
-            : "translateX(-100%)",
-          pointerEvents: showLibrary ? "auto" : "none", // Prevent interaction when hidden
+          width: "280px",
+          background: "rgba(15, 15, 35, 0.8)",
+          backdropFilter: "blur(20px)",
+          borderRight: "1px solid rgba(120, 255, 120, 0.1)",
+          padding: "24px",
+          marginTop: "24px",
+          boxShadow: "0 0 50px rgba(0, 0, 0, 0.3)",
+          height: "calc(100% - 64px)",
+          top: "64px",
+          left: 0,
+          zIndex: 40,
+          transform: showLibrary ? "translateX(0)" : "translateX(-100%)",
+          pointerEvents: showLibrary ? "auto" : "none"
         }}
       >
         <Library onSelect={handleSelectBook} />
@@ -74,7 +90,12 @@ function App() {
 
       {/* Main Content */}
       <main
-        className="flex-1 flex flex-col items-center justify-center p-4 md:p-12 overflow-auto w-full transition-all duration-300"
+        className="flex-1 flex flex-col items-center justify-center p-4 md:p-12 w-full transition-all duration-300"
+        style={{
+          background: "linear-gradient(135deg, #0f0f23 0%, #1a1a2e 60%, #16213e 100%)",
+          maxHeight: "calc(100vh - 64px)",
+          overflow: "hidden"
+        }}
       >
         <div className="w-full flex flex-col items-center">
           <PDFReader onLoadText={setBook} />
@@ -89,7 +110,7 @@ function App() {
                   value={wpm}
                   onChange={(e) => setWpm(parseInt(e.target.value))}
                   min={100}
-                  className="px-4 py-2 rounded-lg border border-[#BEFC6D] bg-[#272121] text-[#FFFDFD] focus:outline-none focus:border-[#d9ff96] w-32"
+                  className="px-4 py-2 rounded-lg border border-[#53E47F] bg-[#272121] text-[#FFFDFD] focus:outline-none focus:border-[#16162A] w-32"
                 />
               </div>
             </>

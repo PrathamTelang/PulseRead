@@ -33,13 +33,44 @@ function PDFReader({ onLoadText }) {
 
   return (
     <div className="mb-8">
-      <input
-        type="file"
-        accept="application/pdf"
-        onChange={handleFile}
-        ref={fileRef}
-        className="px-3 py-2 rounded-md border border-[#BEFC6D] bg-[#272121] text-[#FFFDFD] cursor-pointer file:bg-[#BEFC6D] file:text-[#272121] file:px-3 file:py-1 file:rounded-md file:mr-4 file:cursor-pointer"
-      />
+      <label htmlFor="pdf-upload">
+        <span
+          style={{
+            display: "inline-block",
+            background: "linear-gradient(135deg, #78ff78, #4ade80)",
+            border: "none",
+            borderRadius: "12px",
+            padding: "16px 32px",
+            fontSize: "16px",
+            fontWeight: 600,
+            color: "#0f0f23",
+            cursor: "pointer",
+            transition: "all 0.3s ease",
+            boxShadow: "0 8px 25px rgba(120, 255, 120, 0.3)",
+            marginRight: "16px",
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow =
+              "0 12px 30px rgba(120, 255, 120, 0.4)";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.transform = "none";
+            e.currentTarget.style.boxShadow =
+              "0 8px 25px rgba(120, 255, 120, 0.3)";
+          }}
+        >
+          Choose file
+        </span>
+        <input
+          id="pdf-upload"
+          type="file"
+          accept="application/pdf"
+          onChange={handleFile}
+          ref={fileRef}
+          style={{ display: "none" }}
+        />
+      </label>
     </div>
   );
 }
