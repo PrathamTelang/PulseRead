@@ -28,7 +28,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen max-h-screen font-sans bg-[#272121] text-[#FFFDFD] overflow-x-hidden overflow-y-hidden">
+    <div className="flex flex-col min-h-screen font-sans bg-[#272121] text-[#FFFDFD] overflow-x-hidden">
       {/* Header */}
       <header
         className="w-full flex items-center gap-2 px-4 py-3 z-50"
@@ -75,7 +75,6 @@ function App() {
           backdropFilter: "blur(20px)",
           borderRight: "1px solid rgba(120, 255, 120, 0.1)",
           padding: "24px",
-          marginTop: "24px",
           boxShadow: "0 0 50px rgba(0, 0, 0, 0.3)",
           height: "calc(100% - 64px)",
           top: "64px",
@@ -92,9 +91,7 @@ function App() {
       <main
         className="flex-1 flex flex-col items-center justify-center p-4 md:p-12 w-full transition-all duration-300"
         style={{
-          background: "linear-gradient(135deg, #0f0f23 0%, #1a1a2e 60%, #16213e 100%)",
-          maxHeight: "calc(100vh - 64px)",
-          overflow: "hidden"
+          background: "linear-gradient(135deg, #0f0f23 0%, #1a1a2e 60%, #16213e 100%)"
         }}
       >
         <div className="w-full flex flex-col items-center">
