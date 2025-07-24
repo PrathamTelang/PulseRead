@@ -3,6 +3,7 @@ import PDFReader from "./components/PDFReader";
 import WordFlasher from "./components/WordFlasher";
 import Library from "./components/Library";
 import logo from "./assets/logo.png";
+import "./scrollbar.css";
 
 function App() {
   const [book, setBook] = useState(null);
@@ -28,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-[#272121] text-[#FFFDFD] overflow-x-hidden">
+    <div className="flex flex-col h-screen max-h-screen font-sans bg-[#272121] text-[#FFFDFD] overflow-x-hidden overflow-y-hidden">
       {/* Header */}
       <header
         className="w-full flex items-center gap-2 px-4 py-3 z-50"
@@ -68,7 +69,7 @@ function App() {
 
       {/* Sidebar */}
       <aside
-        className="fixed top-[64px] left-0 z-40 flex flex-col gap-4 md:gap-8 transition-transform duration-300 ease-in-out"
+        className="fixed top-[64px] left-0 z-40 flex flex-col gap-4 md:gap-8 transition-transform duration-300 ease-in-out overflow-y-auto custom-scrollbar"
         style={{
           width: "280px",
           background: "rgba(15, 15, 35, 0.8)",
@@ -89,9 +90,10 @@ function App() {
 
       {/* Main Content */}
       <main
-        className="flex-1 flex flex-col items-center justify-center p-4 md:p-12 w-full transition-all duration-300"
+        className="flex-1 flex flex-col items-center justify-center p-4 md:p-12 w-full transition-all duration-300 overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, #0f0f23 0%, #1a1a2e 60%, #16213e 100%)"
+          background: "linear-gradient(135deg, #0f0f23 0%, #1a1a2e 60%, #16213e 100%)",
+          height: "calc(100vh - 64px)"
         }}
       >
         <div className="w-full flex flex-col items-center">
