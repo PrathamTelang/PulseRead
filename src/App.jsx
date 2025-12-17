@@ -32,7 +32,7 @@ function App() {
     <div className="flex flex-col h-screen max-h-screen font-sans bg-[#272121] text-[#FFFDFD] overflow-x-hidden overflow-y-hidden">
       {/* Header */}
       <header
-        className="w-full flex items-center gap-2 px-4 py-3 z-50"
+        className="w-full flex items-center gap-2 px-4  z-50"
         style={{
           background: "rgba(15, 15, 35, 0.8)",
           backdropFilter: "blur(20px)",
@@ -41,7 +41,7 @@ function App() {
       >
         <button
           onClick={() => setShowLibrary((prev) => !prev)}
-          className="bg-[#53E47F] text-[#272121] font-semibold rounded-lg p-2 shadow-md hover:bg-[#53e47e54] transition-all flex items-center justify-center"
+          className="bg-[#53E47F] text-[#272121] font-semibold rounded-lg p-2 shadow-md hover:bg-[#53e47e54] transition-all flex items-center justify-center cursor-pointer"
           style={{ minWidth: "40px", minHeight: "40px" }}
           aria-label={showLibrary ? "Close sidebar" : "Open sidebar"}
         >
