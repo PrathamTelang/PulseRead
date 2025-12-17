@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PDFReader from "./components/PDFReader";
 import WordFlasher from "./components/WordFlasher";
 import Library from "./components/Library";
-import logo from "./assets/logo.png";
+import logo from "/logo.png";
 import "./scrollbar.css";
 
 function App() {
