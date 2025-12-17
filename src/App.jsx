@@ -51,7 +51,8 @@ function App() {
             </button>
             <button
               onClick={toggleDarkMode}
-              className="px-4 py-3 rounded-xl font-semibold transition-all cursor-pointer flex items-center justify-center"
+              aria-label={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              className="h-10 w-10 rounded-full transition-all cursor-pointer flex items-center justify-center"
               style={{ background: 'var(--secondary)', color: 'var(--secondary-foreground)', border: '1px solid var(--border)' }}
               title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             >
@@ -85,7 +86,8 @@ function App() {
       <header className="px-8 py-16 text-center relative">
         <button
           onClick={toggleDarkMode}
-          className="absolute top-8 right-8 px-4 py-3 rounded-xl font-semibold transition-all cursor-pointer flex items-center justify-center"
+          aria-label={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          className="absolute top-8 right-8 h-11 w-11 rounded-full transition-all cursor-pointer flex items-center justify-center"
           style={{ background: 'var(--secondary)', color: 'var(--secondary-foreground)', border: '1px solid var(--border)', boxShadow: 'var(--shadow-md)' }}
           title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         >
