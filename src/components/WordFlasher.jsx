@@ -75,25 +75,25 @@ function WordFlasher({ book, wpm }) {
   };
 
   return (
-    <div className="w-full max-w-2xl">
-      <div className="mb-4">
-        <h2 className="font-sora text-xl font-bold text-center mb-6">
+    <div className="w-full ">
+      <div className="mb-4 w-full flex flex-col items-center justify-between">
+        <h2 className="font-sora text-xl font-bold text-center mb-6 w-full flex flex-col items-center justify-between">
           Now Reading: {book.name}
         </h2>
-        <div className="flex justify-center items-center">
+        <div className="w-full flex justify-center items-center">
           <div
             className="word-display mb-8 w-full"
             style={{
-              background: "rgba(26, 26, 46, 0.4)",
+              background: "var(--card)",
               backdropFilter: "blur(20px)",
-              border: "1px solid rgba(120, 255, 120, 0.1)",
+              border: "1px solid var(--border)",
               borderRadius: "24px",
               padding: "80px 60px",
               minHeight: "280px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 20px 50px rgba(0, 0, 0, 0.3)",
+              boxShadow: "var(--shadow-2xl)",
               position: "relative",
               overflow: "hidden"
             }}
@@ -103,8 +103,8 @@ function WordFlasher({ book, wpm }) {
               style={{
                 fontSize: "4rem",
                 fontWeight: 300,
-                color: "#fff",
-                textShadow: "0 0 30px rgba(120, 255, 120, 0.5)",
+                color: "var(--foreground)",
+                textShadow: "0 0 30px color-mix(in srgb, var(--primary) 50%, transparent)",
                 letterSpacing: "-1px",
                 transition: "all 0.3s ease",
                 zIndex: 1
@@ -120,7 +120,7 @@ function WordFlasher({ book, wpm }) {
                 left: "-50%",
                 width: "200%",
                 height: "200%",
-                background: "conic-gradient(transparent, rgba(120, 255, 120, 0.1), transparent)",
+                background: "conic-gradient(transparent, color-mix(in srgb, var(--primary) 10%, transparent), transparent)",
                 animation: "rotate 20s linear infinite",
                 zIndex: 0,
                 pointerEvents: "none"
@@ -132,11 +132,11 @@ function WordFlasher({ book, wpm }) {
           <button
             onClick={goBackward}
             style={{
-              background: "rgba(26, 26, 46, 0.6)",
-              border: "1px solid rgba(120, 255, 120, 0.2)",
+              background: "var(--secondary)",
+              border: "1px solid var(--border)",
               borderRadius: "12px",
               padding: "14px 24px",
-              color: "#fff",
+              color: "var(--secondary-foreground)",
               fontSize: "14px",
               fontWeight: 500,
               cursor: "pointer",
@@ -146,14 +146,12 @@ function WordFlasher({ book, wpm }) {
               marginRight: "8px"
             }}
             onMouseOver={e => {
-              e.currentTarget.style.background = "rgba(26, 26, 46, 0.8)";
-              e.currentTarget.style.borderColor = "rgba(120, 255, 120, 0.4)";
+              e.currentTarget.style.background = "var(--accent)";
               e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow = "0 6px 20px rgba(0, 0, 0, 0.3)";
+              e.currentTarget.style.boxShadow = "var(--shadow-md)";
             }}
             onMouseOut={e => {
-              e.currentTarget.style.background = "rgba(26, 26, 46, 0.6)";
-              e.currentTarget.style.borderColor = "rgba(120, 255, 120, 0.2)";
+              e.currentTarget.style.background = "var(--secondary)";
               e.currentTarget.style.transform = "none";
               e.currentTarget.style.boxShadow = "none";
             }}
@@ -163,10 +161,10 @@ function WordFlasher({ book, wpm }) {
           <button
             onClick={isPlaying ? pause : start}
             style={{
-              background: "linear-gradient(135deg, #78ff78, #4ade80)",
-              color: "#0f0f23",
+              background: "var(--primary)",
+              color: "var(--primary-foreground)",
               fontWeight: 600,
-              boxShadow: "0 4px 15px rgba(120, 255, 120, 0.3)",
+              boxShadow: "var(--shadow-lg)",
               border: "none",
               borderRadius: "12px",
               padding: "14px 24px",
@@ -178,11 +176,11 @@ function WordFlasher({ book, wpm }) {
             }}
             onMouseOver={e => {
               e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = "0 8px 25px rgba(120, 255, 120, 0.4)";
+              e.currentTarget.style.boxShadow = "var(--shadow-xl)";
             }}
             onMouseOut={e => {
               e.currentTarget.style.transform = "none";
-              e.currentTarget.style.boxShadow = "0 4px 15px rgba(120, 255, 120, 0.3)";
+              e.currentTarget.style.boxShadow = "var(--shadow-lg)";
             }}
           >
             {isPlaying ? "Pause" : "Play"}
@@ -190,11 +188,11 @@ function WordFlasher({ book, wpm }) {
           <button
             onClick={reset}
             style={{
-              background: "rgba(26, 26, 46, 0.6)",
-              border: "1px solid rgba(120, 255, 120, 0.2)",
+              background: "var(--secondary)",
+              border: "1px solid var(--border)",
               borderRadius: "12px",
               padding: "14px 24px",
-              color: "#fff",
+              color: "var(--secondary-foreground)",
               fontSize: "14px",
               fontWeight: 500,
               cursor: "pointer",
@@ -204,14 +202,12 @@ function WordFlasher({ book, wpm }) {
               marginRight: "8px"
             }}
             onMouseOver={e => {
-              e.currentTarget.style.background = "rgba(26, 26, 46, 0.8)";
-              e.currentTarget.style.borderColor = "rgba(120, 255, 120, 0.4)";
+              e.currentTarget.style.background = "var(--accent)";
               e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow = "0 6px 20px rgba(0, 0, 0, 0.3)";
+              e.currentTarget.style.boxShadow = "var(--shadow-md)";
             }}
             onMouseOut={e => {
-              e.currentTarget.style.background = "rgba(26, 26, 46, 0.6)";
-              e.currentTarget.style.borderColor = "rgba(120, 255, 120, 0.2)";
+              e.currentTarget.style.background = "var(--secondary)";
               e.currentTarget.style.transform = "none";
               e.currentTarget.style.boxShadow = "none";
             }}
@@ -221,11 +217,11 @@ function WordFlasher({ book, wpm }) {
           <button
             onClick={goForward}
             style={{
-              background: "rgba(26, 26, 46, 0.6)",
-              border: "1px solid rgba(120, 255, 120, 0.2)",
+              background: "var(--secondary)",
+              border: "1px solid var(--border)",
               borderRadius: "12px",
               padding: "14px 24px",
-              color: "#fff",
+              color: "var(--secondary-foreground)",
               fontSize: "14px",
               fontWeight: 500,
               cursor: "pointer",
@@ -234,14 +230,12 @@ function WordFlasher({ book, wpm }) {
               minWidth: "80px"
             }}
             onMouseOver={e => {
-              e.currentTarget.style.background = "rgba(26, 26, 46, 0.8)";
-              e.currentTarget.style.borderColor = "rgba(120, 255, 120, 0.4)";
+              e.currentTarget.style.background = "var(--accent)";
               e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow = "0 6px 20px rgba(0, 0, 0, 0.3)";
+              e.currentTarget.style.boxShadow = "var(--shadow-md)";
             }}
             onMouseOut={e => {
-              e.currentTarget.style.background = "rgba(26, 26, 46, 0.6)";
-              e.currentTarget.style.borderColor = "rgba(120, 255, 120, 0.2)";
+              e.currentTarget.style.background = "var(--secondary)";
               e.currentTarget.style.transform = "none";
               e.currentTarget.style.boxShadow = "none";
             }}
@@ -250,14 +244,14 @@ function WordFlasher({ book, wpm }) {
           </button>
         </div>
       </div>
-      <div className="w-full max-w-xl mt-8">
-        <p className="text-center text-[#FFFDFD] mb-2">
+      <div className="w-full  mt-8">
+        <p className="text-center mb-2" style={{ color: "var(--foreground)" }}>
           {Math.floor(progress)}% completed
         </p>
-        <div className="w-full h-2 bg-[#403D36] rounded overflow-hidden">
+        <div className="w-full h-2 rounded overflow-hidden" style={{ background: "var(--muted)" }}>
           <div
-            className="h-full bg-[#69F47B] transition-all duration-400"
-            style={{ width: `${progress}%` }}
+            className="h-full transition-all duration-400"
+            style={{ width: `${progress}%`, background: "var(--primary)" }}
           ></div>
         </div>
       </div>

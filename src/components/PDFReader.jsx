@@ -37,27 +37,25 @@ function PDFReader({ onLoadText }) {
         <span
           style={{
             display: "inline-block",
-            background: "linear-gradient(135deg, #78ff78, #4ade80)",
+            background: "var(--primary)",
             border: "none",
             borderRadius: "12px",
             padding: "16px 32px",
             fontSize: "16px",
             fontWeight: 600,
-            color: "#0f0f23",
+            color: "var(--primary-foreground)",
             cursor: "pointer",
             transition: "all 0.3s ease",
-            boxShadow: "0 8px 25px rgba(120, 255, 120, 0.3)",
+            boxShadow: "var(--shadow-lg)",
             marginRight: "16px",
           }}
           onMouseOver={(e) => {
             e.currentTarget.style.transform = "translateY(-2px)";
-            e.currentTarget.style.boxShadow =
-              "0 12px 30px rgba(120, 255, 120, 0.4)";
+            e.currentTarget.style.boxShadow = "var(--shadow-xl)";
           }}
           onMouseOut={(e) => {
             e.currentTarget.style.transform = "none";
-            e.currentTarget.style.boxShadow =
-              "0 8px 25px rgba(120, 255, 120, 0.3)";
+            e.currentTarget.style.boxShadow = "var(--shadow-lg)";
           }}
         >
           Choose file
