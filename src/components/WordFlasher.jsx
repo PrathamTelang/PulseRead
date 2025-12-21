@@ -129,35 +129,7 @@ function WordFlasher({ book, wpm }) {
           </div>
         </div>
         <div className="flex flex-wrap gap-2 sm:gap-4 my-4 items-center justify-center px-2">
-          <button
-            onClick={goBackward}
-            style={{
-              background: "var(--secondary)",
-              border: "1px solid var(--border)",
-              borderRadius: "12px",
-              padding: "0.75rem 1rem",
-              color: "var(--secondary-foreground)",
-              fontSize: "0.875rem",
-              fontWeight: 500,
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-              backdropFilter: "blur(10px)",
-              minWidth: "60px",
-              flex: "1 1 45%"
-            }}
-            onMouseOver={e => {
-              e.currentTarget.style.background = "var(--accent)";
-              e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow = "var(--shadow-md)";
-            }}
-            onMouseOut={e => {
-              e.currentTarget.style.background = "var(--secondary)";
-              e.currentTarget.style.transform = "none";
-              e.currentTarget.style.boxShadow = "none";
-            }}
-          >
-            ← -10
-          </button>
+          
           <button
             onClick={isPlaying ? pause : start}
             style={{
@@ -213,6 +185,35 @@ function WordFlasher({ book, wpm }) {
             }}
           >
             Reset
+          </button>
+          <button
+            onClick={goBackward}
+            style={{
+              background: "var(--secondary)",
+              border: "1px solid var(--border)",
+              borderRadius: "12px",
+              padding: "0.75rem 1rem",
+              color: "var(--secondary-foreground)",
+              fontSize: "0.875rem",
+              fontWeight: 500,
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              backdropFilter: "blur(10px)",
+              minWidth: "60px",
+              flex: "1 1 45%"
+            }}
+            onMouseOver={e => {
+              e.currentTarget.style.background = "var(--accent)";
+              e.currentTarget.style.transform = "translateY(-1px)";
+              e.currentTarget.style.boxShadow = "var(--shadow-md)";
+            }}
+            onMouseOut={e => {
+              e.currentTarget.style.background = "var(--secondary)";
+              e.currentTarget.style.transform = "none";
+              e.currentTarget.style.boxShadow = "none";
+            }}
+          >
+            ← -10
           </button>
           <button
             onClick={goForward}
