@@ -166,4 +166,165 @@ body {
   font-family: 'Space Grotesk', var(--font-sans);
   background: var(--background);
   color: var(--foreground);
+  margin: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 640px) {
+  /* Hero section */
+  header {
+    padding: 1rem 1rem !important;
+    margin-top: 2rem !important;
+  }
+  
+  header h1 {
+    font-size: 2.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  header .sm\:max-w-4xl {
+    max-width: 100% !important;
+  }
+  
+  /* Reduce padding in all main sections */
+  section {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Stats grid - single column */
+  .grid-cols-1 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Stats cards */
+  section .backdrop-blur-lg {
+    padding: 1.5rem !important;
+  }
+  
+  section .text-5xl {
+    font-size: 2.5rem !important;
+  }
+  
+  section .text-3xl {
+    font-size: 1.75rem !important;
+  }
+  
+  section .text-4xl {
+    font-size: 1.5rem !important;
+  }
+  
+  section .text-2xl {
+    font-size: 1.25rem !important;
+  }
+  
+  section .text-lg {
+    font-size: 0.875rem !important;
+  }
+  
+  /* Upload and Library containers */
+  .max-w-3xl {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .max-w-5xl {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .max-w-6xl {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  
+  .rounded-3xl {
+    padding: 1.5rem !important;
+  }
+  
+  /* Word Flasher display */
+  .word-display {
+    padding: 2rem 1rem !important;
+    min-height: 200px !important;
+  }
+  
+  .word-display .word {
+    font-size: 2.5rem !important;
+  }
+  
+  /* Buttons - reduce padding and make responsive */
+  button {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.875rem !important;
+    min-width: 60px !important;
+  }
+  
+  /* Control buttons layout */
+  .flex.gap-4 {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+  
+  /* Reading speed controls */
+  .mb-8.w-full.flex {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .mb-8.w-full.flex label {
+    font-size: 0.875rem !important;
+  }
+  
+  .mb-8.w-full.flex .max-w-md {
+    max-width: 100% !important;
+  }
+  
+  /* Back button and dark mode toggle */
+  .flex.justify-between.items-center {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+  
+  .px-6.py-3 {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 1rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Text adjustments */
+  .mb-4 {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .mb-6 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .mb-8 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .py-12 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .py-16 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
 }

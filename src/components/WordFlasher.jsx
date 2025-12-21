@@ -75,21 +75,21 @@ function WordFlasher({ book, wpm }) {
   };
 
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <div className="mb-4 w-full flex flex-col items-center justify-between">
-        <h2 className="font-sora text-xl font-bold text-center mb-6 w-full flex flex-col items-center justify-between">
+        <h2 className="font-sora text-lg sm:text-xl font-bold text-center mb-4 sm:mb-6 w-full flex flex-col items-center justify-between px-2">
           Now Reading: {book.name}
         </h2>
-        <div className="w-full flex justify-center items-center">
+        <div className="w-full flex justify-center items-center px-2 sm:px-0">
           <div
-            className="word-display mb-8 w-full"
+            className="word-display mb-6 sm:mb-8 w-full"
             style={{
               background: "var(--card)",
               backdropFilter: "blur(20px)",
               border: "1px solid var(--border)",
               borderRadius: "24px",
-              padding: "80px 60px",
-              minHeight: "280px",
+              padding: "2rem 1rem",
+              minHeight: "180px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -101,7 +101,7 @@ function WordFlasher({ book, wpm }) {
             <span
               className="word"
               style={{
-                fontSize: "4rem",
+                fontSize: "clamp(1.5rem, 8vw, 4rem)",
                 fontWeight: 300,
                 color: "var(--foreground)",
                 textShadow: "0 0 30px color-mix(in srgb, var(--primary) 50%, transparent)",
@@ -128,22 +128,22 @@ function WordFlasher({ book, wpm }) {
             />
           </div>
         </div>
-        <div className="flex gap-4 my-4 items-center justify-center">
+        <div className="flex flex-wrap gap-2 sm:gap-4 my-4 items-center justify-center px-2">
           <button
             onClick={goBackward}
             style={{
               background: "var(--secondary)",
               border: "1px solid var(--border)",
               borderRadius: "12px",
-              padding: "14px 24px",
+              padding: "0.75rem 1rem",
               color: "var(--secondary-foreground)",
-              fontSize: "14px",
+              fontSize: "0.875rem",
               fontWeight: 500,
               cursor: "pointer",
               transition: "all 0.3s ease",
               backdropFilter: "blur(10px)",
-              minWidth: "80px",
-              marginRight: "8px"
+              minWidth: "60px",
+              flex: "1 1 45%"
             }}
             onMouseOver={e => {
               e.currentTarget.style.background = "var(--accent)";
@@ -167,12 +167,12 @@ function WordFlasher({ book, wpm }) {
               boxShadow: "var(--shadow-lg)",
               border: "none",
               borderRadius: "12px",
-              padding: "14px 24px",
-              fontSize: "14px",
+              padding: "0.75rem 1rem",
+              fontSize: "0.875rem",
               cursor: "pointer",
               transition: "all 0.3s ease",
-              minWidth: "80px",
-              marginRight: "8px"
+              minWidth: "60px",
+              flex: "1 1 45%"
             }}
             onMouseOver={e => {
               e.currentTarget.style.transform = "translateY(-2px)";
@@ -191,15 +191,15 @@ function WordFlasher({ book, wpm }) {
               background: "var(--secondary)",
               border: "1px solid var(--border)",
               borderRadius: "12px",
-              padding: "14px 24px",
+              padding: "0.75rem 1rem",
               color: "var(--secondary-foreground)",
-              fontSize: "14px",
+              fontSize: "0.875rem",
               fontWeight: 500,
               cursor: "pointer",
               transition: "all 0.3s ease",
               backdropFilter: "blur(10px)",
-              minWidth: "80px",
-              marginRight: "8px"
+              minWidth: "60px",
+              flex: "1 1 45%"
             }}
             onMouseOver={e => {
               e.currentTarget.style.background = "var(--accent)";
@@ -220,14 +220,15 @@ function WordFlasher({ book, wpm }) {
               background: "var(--secondary)",
               border: "1px solid var(--border)",
               borderRadius: "12px",
-              padding: "14px 24px",
+              padding: "0.75rem 1rem",
               color: "var(--secondary-foreground)",
-              fontSize: "14px",
+              fontSize: "0.875rem",
               fontWeight: 500,
               cursor: "pointer",
               transition: "all 0.3s ease",
               backdropFilter: "blur(10px)",
-              minWidth: "80px"
+              minWidth: "60px",
+              flex: "1 1 45%"
             }}
             onMouseOver={e => {
               e.currentTarget.style.background = "var(--accent)";
@@ -244,8 +245,8 @@ function WordFlasher({ book, wpm }) {
           </button>
         </div>
       </div>
-      <div className="w-full  mt-8">
-        <p className="text-center mb-2" style={{ color: "var(--foreground)" }}>
+      <div className="w-full mt-6 sm:mt-8 px-2 sm:px-0">
+        <p className="text-center mb-2 text-sm sm:text-base" style={{ color: "var(--foreground)" }}>
           {Math.floor(progress)}% completed
         </p>
         <div className="w-full h-2 rounded overflow-hidden" style={{ background: "var(--muted)" }}>
